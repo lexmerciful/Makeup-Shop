@@ -1,6 +1,7 @@
 package com.lex.makeupshop
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,9 +45,9 @@ private val itemList: List<MakeupItem>): RecyclerView.Adapter<MainAdapter.ViewHo
         holder.bindData(itemList[position])
 
         holder.itemView.setOnClickListener{
-            if (onClickListener != null){
-                onClickListener!!.onClick(position, itemList[position])
-            }
+            val intent = Intent(context, ProductDetailsActivity::class.java)
+            intent.putExtra(Constants.MAKEUP_ITEM_EXTRA, itemList[position])
+            context.startActivity(intent)
         }
     }
 
@@ -61,4 +62,5 @@ private val itemList: List<MakeupItem>): RecyclerView.Adapter<MainAdapter.ViewHo
     fun setOnClickListener(onClickListener: OnClickListener){
         this.onClickListener = onClickListener
     }
+
 }

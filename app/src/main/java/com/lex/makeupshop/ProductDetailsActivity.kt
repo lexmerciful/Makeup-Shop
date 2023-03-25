@@ -23,8 +23,8 @@ class ProductDetailsActivity : AppCompatActivity() {
         binding = ActivityProductDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (intent.hasExtra(MainActivity.MAKEUP_ITEM_EXTRA)){
-            makeupItem = intent.getSerializableExtra(MainActivity.MAKEUP_ITEM_EXTRA) as MakeupItem
+        if (intent.hasExtra(Constants.MAKEUP_ITEM_EXTRA)){
+            makeupItem = intent.getSerializableExtra(Constants.MAKEUP_ITEM_EXTRA) as MakeupItem
         }
 
         if (makeupItem != null){
