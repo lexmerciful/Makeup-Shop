@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_product_details_activity"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/svDetailsMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivDetailsImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/details_text_view_margin"
+        android:src="@drawable/item_placeholder"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/view_margin_topBottom"
+        android:layout_marginBottom="@dimen/details_image_view_margin"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/tvDetailsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_margin_top"
+        android:layout_marginBottom="@dimen/details_text_view_margin"
+        android:layout_gravity="center"
+        android:text="name"
+        android:textStyle="bold"
+        android:textColor="@color/tv_color"
+        android:fontFamily="@font/abelregular"
+        android:textSize="@dimen/details_name_text_view_size" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_margin_top"
+        android:layout_marginBottom="@dimen/details_text_view_margin"
+        android:orientation="horizontal">
+
+       <TextView
+           android:id="@+id/tvDetailsBrandLabel"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Brand: "
+           android:textStyle="bold"
+           android:textColor="@color/tv_color"
+           android:fontFamily="@font/abelregular"
+           android:textSize="@dimen/details_text_view_size" />
+
+    <TextView
+        android:id="@+id/tvDetailsBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brand"
+        android:textStyle="bold"
+        android:textColor="@color/tv_color"
+        android:fontFamily="@font/abelregular"
+        android:textSize="@dimen/details_text_view_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_margin_top"
+        android:layout_marginBottom="@dimen/details_text_view_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDetailsPriceSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ "
+            android:fontFamily="@font/abelregular"
+            android:textColor="@color/tv_color"
+            android:textSize="@dimen/details_text_view_size"/>
+
+        <TextView
+            android:id="@+id/tvDetailsPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="price"
+            android:fontFamily="@font/abelregular"
+            android:textColor="@color/tv_color"
+            android:textSize="@dimen/details_text_view_size"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_margin_top"
+        android:layout_marginBottom="@dimen/details_text_view_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDetailsCategoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category: "
+            android:textStyle="bold"
+            android:fontFamily="@font/abelregular"
+            android:textColor="@color/tv_color"
+            android:textSize="@dimen/details_text_view_size"/>
+
+        <TextView
+            android:id="@+id/tvDetailsCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:fontFamily="@font/abelregular"
+            android:textColor="@color/tv_color"
+            android:textSize="@dimen/details_text_view_size"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBuyNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy Now"
+        android:backgroundTint="@color/btn_color"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/view_margin_topBottom"
+        android:layout_marginBottom="@dimen/details_image_view_margin"
+        android:background="@android:color/darker_gray"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDetailsColorOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/details_text_view_margin"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/view_margin_topBottom"
+        android:layout_marginBottom="@dimen/details_image_view_margin"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_margin_top"
+        android:layout_marginBottom="@dimen/details_text_view_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDetailsDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: "
+            android:textStyle="bold"
+            android:fontFamily="@font/abelregular"
+            android:textColor="@color/tv_color"
+            android:textSize="@dimen/details_text_view_size"/>
+
+        <TextView
+            android:id="@+id/tvDetailsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:fontFamily="@font/abelregular"
+            android:textColor="@color/tv_color"
+            android:textSize="@dimen/details_text_view_size"/>
+
+    </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
