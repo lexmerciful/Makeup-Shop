@@ -21,6 +21,8 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '8'
+      - name: Add executable permission to gradlew
+        run: chmod +x gradlew
       - name: Run Tests
         run: ./gradlew test
       - name: Build Project
