@@ -15,9 +15,12 @@ jobs:
   apk:
     runs-on: ubuntu-latest
     name: Generate APK
+    continue-on-error: true
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
       - name: Setup JDK
         uses: actions/setup-java@v2
         with:
