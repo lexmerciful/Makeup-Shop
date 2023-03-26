@@ -1,14 +1,18 @@
 package com.lex.makeupshop
 
-import android.util.Log
+import android.app.Activity
+import android.content.Context
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.AppBarLayout
 import com.lex.makeupshop.network.ApiClient
 import com.lex.makeupshop.network.MakeupItem
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainViewModel(
     private val repository: Repository = Repository(ApiClient.apiService)
@@ -24,25 +28,32 @@ class MainViewModel(
 
     private fun fetchMakeupItems(){
 
-        val client = repository.getMakeupItems()
         _makeupItemsLiveData.postValue(ScreenState.Loading(null))
-        client.enqueue(object : Callback<List<MakeupItem>>{
-            override fun onResponse(
-                call: Call<List<MakeupItem>>,
-                response: Response<List<MakeupItem>>
-            ) {
-                if (response.isSuccessful){
-                    _makeupItemsLiveData.postValue(ScreenState.Success(response.body()))
-                }else{
-                    _makeupItemsLiveData.postValue(ScreenState.Error(response.code().toString(), null))
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val client = repository.getMakeupItems()
+                _makeupItemsLiveData.postValue(ScreenState.Success(client))
+            }catch (e:Exception){
+                _makeupItemsLiveData.postValue(ScreenState.Error(e.message.toString(), null))
+            }
+
+        }
+
+    }
+
+    fun setupScrollingAppBar(appBarLayout: AppBarLayout, toolbar: Toolbar, recyclerView: RecyclerView){
+        val layoutParams = toolbar.layoutParams as AppBarLayout.LayoutParams
+        layoutParams.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL or AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
+        toolbar.layoutParams = layoutParams
+
+        val behavior = appBarLayout.behavior as AppBarLayout.Behavior?
+        if (behavior != null && behavior is AppBarLayout.Behavior) {
+            behavior.setDragCallback(object : AppBarLayout.Behavior.DragCallback() {
+                override fun canDrag(appBarLayout: AppBarLayout): Boolean {
+                    // Enable dragging of the toolbar only when the RecyclerView is at the top
+                    return recyclerView.computeVerticalScrollOffset() == 0
                 }
-            }
-
-            override fun onFailure(call: Call<List<MakeupItem>>, t: Throwable) {
-                Log.e("Failure: ", t.message.toString())
-                _makeupItemsLiveData.postValue(ScreenState.Error(t.message.toString(), null))
-            }
-
-        })
+            })
+        }
     }
 }

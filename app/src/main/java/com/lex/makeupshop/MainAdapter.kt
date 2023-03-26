@@ -14,8 +14,6 @@ import com.lex.makeupshop.network.MakeupItem
 class MainAdapter(private val context: Context,
 private val itemList: List<MakeupItem>): RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
-    private var onClickListener: OnClickListener? = null
-
     inner class ViewHolder(private val binding: RvItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bindData(makeupItem: MakeupItem){
             binding.tvName.text = makeupItem.name
@@ -53,14 +51,6 @@ private val itemList: List<MakeupItem>): RecyclerView.Adapter<MainAdapter.ViewHo
 
     override fun getItemCount(): Int {
         return itemList.size
-    }
-
-    interface OnClickListener {
-        fun onClick(position: Int, makeupItem: MakeupItem)
-    }
-
-    fun setOnClickListener(onClickListener: OnClickListener){
-        this.onClickListener = onClickListener
     }
 
 }

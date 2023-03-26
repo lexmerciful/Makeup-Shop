@@ -36,5 +36,5 @@ object ApiClient {
  */
 interface ApiService {
     @GET("products.json")
-    fun fetchMakeupItems(): Call<List<MakeupItem>>
+    suspend fun fetchMakeupItems(): List<MakeupItem>
 }
