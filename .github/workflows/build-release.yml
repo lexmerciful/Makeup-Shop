@@ -15,8 +15,10 @@ jobs:
     name: Build and Release
     continue-on-error: true
     steps:
+        runs-on: ubuntu-latest
       - uses: actions/checkout@v2
       - name: set up JDK 11
+        runs-on: ubuntu-latest
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
@@ -32,6 +34,7 @@ jobs:
       - name: build release
         run: ./gradlew assembleRelease
       - name: Upload APK
+        runs-on: ubuntu-latest
         uses: actions/upload-artifact@v2
         with:
           name: apk
