@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/JavaPogram/MakeupShop/app/src/main/res/drawable-anydpi/ic_arrow_upward.xml" value="0.1945" />
+        <entry key="..\:/JavaPogram/MakeupShop/app/src/main/res/drawable/ic_baseline_arrow_upward_24.xml" value="0.1945" />
         <entry key="..\:/JavaPogram/MakeupShop/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/JavaPogram/MakeupShop/app/src/main/res/layout/activity_product_details.xml" value="0.20416666666666666" />
         <entry key="..\:/JavaPogram/MakeupShop/app/src/main/res/layout/rv_color_items.xml" value="0.33" />

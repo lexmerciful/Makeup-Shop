@@ -1,7 +1,6 @@
 package com.lex.makeupshop
 
-import android.app.Activity
-import android.content.Context
+import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.lex.makeupshop.network.ApiClient
 import com.lex.makeupshop.network.MakeupItem
 import kotlinx.coroutines.Dispatchers
@@ -41,7 +41,7 @@ class MainViewModel(
 
     }
 
-    fun setupScrollingAppBar(appBarLayout: AppBarLayout, toolbar: Toolbar, recyclerView: RecyclerView){
+    fun setupScrollingBar(appBarLayout: AppBarLayout, toolbar: Toolbar, fab: FloatingActionButton, recyclerView: RecyclerView){
         val layoutParams = toolbar.layoutParams as AppBarLayout.LayoutParams
         layoutParams.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL or AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
         toolbar.layoutParams = layoutParams
@@ -54,6 +54,27 @@ class MainViewModel(
                     return recyclerView.computeVerticalScrollOffset() == 0
                 }
             })
+        }
+
+
+        // Add an OnScrollListener to the RecyclerView
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                // Show/hide the FloatingActionButton based on the scrolling direction
+                if (dy > 0 && fab.visibility != View.VISIBLE) {
+                    // Scroll down - show the FloatingActionButton
+                    fab.show()
+                } else if (dy < 0 && fab.visibility == View.VISIBLE) {
+                    // Scroll up - hide the FloatingActionButton
+                    fab.hide()
+                }
+            }
+        })
+
+        fab.setOnClickListener {
+            recyclerView.smoothScrollToPosition(0)
         }
     }
 }

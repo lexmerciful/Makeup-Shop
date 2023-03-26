@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
             processMakeupItemResponse(state)
         }
 
-        viewModel.setupScrollingAppBar(
-            binding.appBar, binding.toolbarMainActivity, binding.rvMakeupItems
+        viewModel.setupScrollingBar(
+            binding.appBar, binding.toolbarMainActivity, binding.fabScrollUp, binding.rvMakeupItems
         )
 
     }

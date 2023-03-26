@@ -27,7 +27,11 @@ class ProductDetailsActivity : AppCompatActivity() {
             makeupItem = intent.getSerializableExtra(Constants.MAKEUP_ITEM_EXTRA) as MakeupItem
         }
 
-        if (makeupItem != null){
+        setView()
+    }
+
+    private fun setView() {
+        if (makeupItem != null) {
             binding.tvDetailsName.text = makeupItem!!.name
             binding.tvDetailsBrand.text = makeupItem!!.brand
             binding.tvDetailsPriceSign.text = makeupItem!!.price_sign
@@ -41,13 +45,14 @@ class ProductDetailsActivity : AppCompatActivity() {
                 .placeholder(R.drawable.item_placeholder)
                 .into(binding.ivDetailsImage)
 
-            val colorOptionLayoutManager = StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL)
+            val colorOptionLayoutManager =
+                StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL)
             binding.rvDetailsColorOptions.layoutManager = colorOptionLayoutManager
             val adapter = ColorOptionsAdapter(this, makeupItem!!.product_colors!!)
             binding.rvDetailsColorOptions.adapter = adapter
-            
+
             binding.btnBuyNow.setOnClickListener {
-                if (makeupItem!!.product_link != ""){
+                if (makeupItem!!.product_link != "") {
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(makeupItem!!.product_link!!))
                     startActivity(intent)
                 }
