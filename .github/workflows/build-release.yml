@@ -15,7 +15,6 @@ jobs:
   apk:
     runs-on: ubuntu-latest
     name: Generate APK
-    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v2
