@@ -36,10 +36,6 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 1.8
-      - name: Build with Gradle
-        uses: gradle-actions/gradle-command-action@v1
-        with:
-          gradle-command: 'assembleRelease'
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
