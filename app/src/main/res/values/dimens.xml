@@ -11,4 +11,15 @@
     <dimen name="details_image_view_margin">20dp</dimen>
     <dimen name="details_name_text_view_size">30sp</dimen>
     <dimen name="details_text_view_size">18sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="item_brand_margin">5dp</dimen>
+    <dimen name="item_brand_padding">5dp</dimen>
+    <dimen name="details_image_view_size">200dp</dimen>
+    <dimen name="cv_corner_radius">10dp</dimen>
+    <dimen name="view_color_size">20dp</dimen>
+    <dimen name="tvColorNameMarginEnd">10dp</dimen>
+    <dimen name="tvColorNameMarginStart">5dp</dimen>
+    <dimen name="item_image_view_size">175dp</dimen>
+    <dimen name="item_name_text_size">18sp</dimen>
 </resources>

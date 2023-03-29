@@ -2,6 +2,7 @@ package com.lex.makeupshop
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,8 +12,11 @@ import com.bumptech.glide.Glide
 import com.lex.makeupshop.databinding.RvItemBinding
 import com.lex.makeupshop.network.MakeupItem
 
-class MainAdapter(private val context: Context,
-private val itemList: List<MakeupItem>): RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+
+    private var itemList: List<MakeupItem> = emptyList()
+
+    private var onClickListener: OnClickListener? = null
 
     inner class ViewHolder(private val binding: RvItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bindData(makeupItem: MakeupItem){
@@ -51,6 +55,20 @@ private val itemList: List<MakeupItem>): RecyclerView.Adapter<MainAdapter.ViewHo
 
     override fun getItemCount(): Int {
         return itemList.size
+    }
+
+    interface OnClickListener {
+        fun onClick(position: Int, makeupItem: MakeupItem)
+    }
+
+    fun setOnClickListener(onClickListener: OnClickListener){
+        this.onClickListener = onClickListener
+    }
+
+    fun updateList(newFilteredList: List<MakeupItem>) {
+        itemList = newFilteredList
+        Log.e("SIZE: ", itemList.size.toString())
+        notifyDataSetChanged()
     }
 
 }

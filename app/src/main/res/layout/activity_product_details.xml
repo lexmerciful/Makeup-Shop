@@ -34,8 +34,8 @@
 
     <ImageView
         android:id="@+id/ivDetailsImage"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/details_image_view_size"
+        android:layout_height="@dimen/details_image_view_size"
         android:layout_gravity="center"
         android:layout_marginBottom="@dimen/details_text_view_margin"
         android:src="@drawable/item_placeholder"/>
@@ -54,7 +54,7 @@
         android:layout_marginTop="@dimen/tv_margin_top"
         android:layout_marginBottom="@dimen/details_text_view_margin"
         android:layout_gravity="center"
-        android:text="name"
+        android:text="@string/name"
         android:textStyle="bold"
         android:textColor="@color/tv_color"
         android:fontFamily="@font/abelregular"
@@ -71,7 +71,7 @@
            android:id="@+id/tvDetailsBrandLabel"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Brand: "
+           android:text="@string/brand"
            android:textStyle="bold"
            android:textColor="@color/tv_color"
            android:fontFamily="@font/abelregular"
@@ -81,7 +81,7 @@
         android:id="@+id/tvDetailsBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="brand"
+        android:text=""
         android:textStyle="bold"
         android:textColor="@color/tv_color"
         android:fontFamily="@font/abelregular"
@@ -100,7 +100,7 @@
             android:id="@+id/tvDetailsPriceSign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$ "
+            android:text="@string/price_sign"
             android:fontFamily="@font/abelregular"
             android:textColor="@color/tv_color"
             android:textSize="@dimen/details_text_view_size"/>
@@ -109,7 +109,7 @@
             android:id="@+id/tvDetailsPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="price"
+            android:text="@string/price"
             android:fontFamily="@font/abelregular"
             android:textColor="@color/tv_color"
             android:textSize="@dimen/details_text_view_size"/>
@@ -126,7 +126,7 @@
             android:id="@+id/tvDetailsCategoryLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Category: "
+            android:text="@string/category"
             android:textStyle="bold"
             android:fontFamily="@font/abelregular"
             android:textColor="@color/tv_color"
@@ -147,7 +147,7 @@
         android:id="@+id/btnBuyNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buy Now"
+        android:text="@string/buy_now"
         android:backgroundTint="@color/btn_color"/>
 
     <View
@@ -181,7 +181,7 @@
             android:id="@+id/tvDetailsDescriptionLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description: "
+            android:text="@string/description"
             android:textStyle="bold"
             android:fontFamily="@font/abelregular"
             android:textColor="@color/tv_color"

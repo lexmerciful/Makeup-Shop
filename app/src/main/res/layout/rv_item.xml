@@ -30,9 +30,10 @@
     
     <ImageView
         android:id="@+id/ivItemImage"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
+        android:layout_width="@dimen/item_image_view_size"
+        android:layout_height="@dimen/item_image_view_size"
         android:layout_gravity="center"
+        android:contentDescription="@string/image"
         android:src="@drawable/item_placeholder"/>
 
     <TextView
@@ -40,16 +41,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/tv_margin_top"
-        android:text="name"
+        android:text="@string/name"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="@dimen/item_name_text_size"/>
 
     <TextView
         android:id="@+id/tvBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/tv_margin_top"
-        android:text="brand"
+        android:text="@string/brand"
         android:textStyle="bold"
         android:textSize="@dimen/tv_size"/>
 
@@ -63,14 +64,14 @@
             android:id="@+id/tvPriceSign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$ "
+            android:text="@string/price_sign"
             android:textSize="@dimen/tv_size"/>
 
         <TextView
             android:id="@+id/tvPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="price"
+            android:text="@string/price"
             android:textSize="@dimen/tv_size"/>
     </LinearLayout>
 
@@ -84,7 +85,7 @@
             android:id="@+id/tvCategoryLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Category: "
+            android:text="@string/category"
             android:textStyle="bold"
             android:textSize="@dimen/tv_size"/>
 

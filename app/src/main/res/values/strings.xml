@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Makeup Shop</string>
     <string name="scroll_up">Scroll up</string>
+    <string name="description">Description:</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="category">Category:</string>
+    <string name="price">price</string>
+    <string name="price_sign">$</string>
+    <string name="brand">Brand:</string>
+    <string name="name">name</string>
+    <string name="white">white</string>
+    <string name="image">Image</string>
 </resources>

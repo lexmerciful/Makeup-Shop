@@ -11,13 +11,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="@dimen/cv_corner_radius">
 
         <View
             android:id="@+id/viewColor"
             android:background="@color/purple_700"
-            android:layout_width="20dp"
-            android:layout_height="20dp"/>
+            android:layout_width="@dimen/view_color_size"
+            android:layout_height="@dimen/view_color_size"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -25,10 +25,10 @@
         android:id="@+id/tvColorName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="white"
+        android:text="@string/white"
         android:fontFamily="@font/abelregular"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="@dimen/tvColorNameMarginStart"
+        android:layout_marginEnd="@dimen/tvColorNameMarginEnd"
         android:textColor="@color/tv_color"
         android:visibility="gone"
         tools:visibility="visible"/>
