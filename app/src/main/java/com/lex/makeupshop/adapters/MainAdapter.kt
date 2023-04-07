@@ -1,14 +1,16 @@
-package com.lex.makeupshop
+package com.lex.makeupshop.adapters
 
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
+import com.lex.makeupshop.utils.Constants
+import com.lex.makeupshop.R
+import com.lex.makeupshop.activities.ProductDetailsActivity
 import com.lex.makeupshop.databinding.RvItemBinding
 import com.lex.makeupshop.network.MakeupItem
 

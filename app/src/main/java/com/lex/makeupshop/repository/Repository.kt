@@ -1,4 +1,4 @@
-package com.lex.makeupshop
+package com.lex.makeupshop.repository
 
 import com.lex.makeupshop.network.ApiService
 

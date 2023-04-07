@@ -1,4 +1,4 @@
-package com.lex.makeupshop
+package com.lex.makeupshop.viewmodel
 
 sealed class ScreenState<T> (val data: T? = null, val message: String? = null) {
 

@@ -1,17 +1,14 @@
-package com.lex.makeupshop
+package com.lex.makeupshop.adapters
 
 import android.content.Context
-import android.graphics.Typeface
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.lex.makeupshop.pojo.Brand
+import com.lex.makeupshop.R
 import com.lex.makeupshop.databinding.ItemBrandTagBinding
-import com.lex.makeupshop.network.MakeupItem
 
 class BrandAdapter(private val context: Context, private val brandList: List<Brand>, private val recyclerView: RecyclerView) :
     RecyclerView.Adapter<BrandAdapter.ViewHolder>() {
@@ -47,7 +44,9 @@ class BrandAdapter(private val context: Context, private val brandList: List<Bra
         holder.itemView.setOnClickListener {
             if (holder.adapterPosition != 0){
                 holder.binding.cvProductColor.setBackgroundResource(R.drawable.shape_brand_unselected_bg)
-                holder.binding.tvBrandName.setTextColor(ContextCompat.getColor(context, R.color.black))
+                holder.binding.tvBrandName.setTextColor(ContextCompat.getColor(context,
+                    R.color.black
+                ))
             }
             onClickListener!!.onClick(position, brand)
             if (onClickListener != null) {

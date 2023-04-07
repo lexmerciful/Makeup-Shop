@@ -1,14 +1,14 @@
-package com.lex.makeupshop
+package com.lex.makeupshop.activities
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
+import com.lex.makeupshop.utils.Constants
+import com.lex.makeupshop.R
+import com.lex.makeupshop.adapters.ColorOptionsAdapter
 import com.lex.makeupshop.databinding.ActivityProductDetailsBinding
 import com.lex.makeupshop.network.MakeupItem
 

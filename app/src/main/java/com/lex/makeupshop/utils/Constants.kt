@@ -1,4 +1,4 @@
-package com.lex.makeupshop
+package com.lex.makeupshop.utils
 
 object Constants {
 

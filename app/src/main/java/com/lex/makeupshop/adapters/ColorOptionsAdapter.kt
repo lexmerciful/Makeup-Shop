@@ -1,4 +1,4 @@
-package com.lex.makeupshop
+package com.lex.makeupshop.adapters
 
 import android.content.Context
 import android.graphics.Color
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.lex.makeupshop.activities.ProductDetailsActivity
 import com.lex.makeupshop.databinding.RvColorItemsBinding
 import com.lex.makeupshop.network.ProductColors
 
@@ -32,11 +33,11 @@ class ColorOptionsAdapter(private val context: Context,
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ColorOptionsAdapter.ViewHolder {
+    ): ViewHolder {
         return ViewHolder(RvColorItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
-    override fun onBindViewHolder(holder: ColorOptionsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(itemColorList[position])
     }
 
